@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2022 at 08:06 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Dec 07, 2022 at 11:29 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,32 +42,8 @@ CREATE TABLE `sepeda_gowes` (
 --
 
 INSERT INTO `sepeda_gowes` (`kode`, `tipe`, `merk`, `harga`, `stok`, `jenis`, `ban`) VALUES
-(9, 'Ducati L 2000', 'Ducati', '3500.00', 19, 'BMX', 'Ducati-XL-1000'),
-(10, 'Nmax 3000', 'Nmax', '1500000.00', 15, 'Gunung', 'Ricard M 150'),
-(11, 'Sonic 450 Z', 'Sonic', '4000.00', 20, 'Lipat', 'So nika z90');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sepeda_listrik`
---
-
-CREATE TABLE `sepeda_listrik` (
-  `kode` int(11) NOT NULL,
-  `tipe` varchar(64) NOT NULL,
-  `merk` varchar(64) NOT NULL,
-  `harga` decimal(11,2) NOT NULL,
-  `stok` int(11) NOT NULL,
-  `kecepatan` varchar(64) NOT NULL,
-  `baterai` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `sepeda_listrik`
---
-
-INSERT INTO `sepeda_listrik` (`kode`, `tipe`, `merk`, `harga`, `stok`, `kecepatan`, `baterai`) VALUES
-(1, 'Sonic 4000', 'Sonic', '54000.00', 30, '100km/h', '85V');
+(11, 'Sonic 4501', 'Sonic', '4000.00', 18, 'Lipat', 'So nika z90'),
+(26, 'SP-LPT2', 'Wimcycle', '3000000.00', 10, 'Lipat', '12');
 
 -- --------------------------------------------------------
 
@@ -92,11 +68,10 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id`, `nama`, `jumlah`, `total`, `pembayaran`, `kembalian`, `tanggal`, `kategori`, `kode`) VALUES
-(6, 'Rudi', 1, '1500000.00', '1500000.00', '0.00', '2022-10-30', 'Gowes', 10),
-(7, 'Niko', 1, '1500000.00', '1500000.00', '0.00', '2022-10-30', 'Gowes', 10),
-(9, 'Uding', 1, '3500.00', '3500.00', '0.00', '2022-10-30', 'Gowes', 9),
-(10, 'Ridho', 1, '3500.00', '3500.00', '0.00', '2022-10-30', 'Gowes', 9),
-(11, 'Saleh', 2, '108000.00', '109000.00', '1000.00', '2022-10-30', 'Listrik', 1);
+(11, 'Saleh', 2, '108000.00', '109000.00', '1000.00', '2022-10-30', 'Listrik', 1),
+(15, 'Test', 1, '4000.00', '5000.00', '1000.00', '2022-11-11', 'Gowes', 11),
+(16, 'Syila', 1, '5000000.00', '6000000.00', '1000000.00', '2022-11-14', 'Listrik', 14),
+(17, 'Sila', 1, '4000.00', '4000.00', '0.00', '2022-12-07', 'Gowes', 11);
 
 --
 -- Indexes for dumped tables
@@ -106,12 +81,6 @@ INSERT INTO `transaksi` (`id`, `nama`, `jumlah`, `total`, `pembayaran`, `kembali
 -- Indexes for table `sepeda_gowes`
 --
 ALTER TABLE `sepeda_gowes`
-  ADD PRIMARY KEY (`kode`);
-
---
--- Indexes for table `sepeda_listrik`
---
-ALTER TABLE `sepeda_listrik`
   ADD PRIMARY KEY (`kode`);
 
 --
@@ -128,19 +97,13 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `sepeda_gowes`
 --
 ALTER TABLE `sepeda_gowes`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `sepeda_listrik`
---
-ALTER TABLE `sepeda_listrik`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
